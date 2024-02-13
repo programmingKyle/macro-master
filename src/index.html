@@ -2,11 +2,91 @@
 <html>
   <head>
     <meta charset="UTF-8" />
-    <title>Hello World!</title>
+    <title>Macro Master</title>
     <link rel="stylesheet" href="index.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
   </head>
   <body>
-    <h1>💖 Hello World!</h1>
-    <p>Welcome to your Electron application.</p>
+    <div class="base-grid">
+      <div class="content-grid">
+        <div class="macro-list-content">
+          <h2 style="text-align: center; padding: 5px 0px;">Macros</h2>
+          <div class="macro-list-grid">
+            <button class="macro-button">
+              <span class="title">Macro 1</span>
+              <span class="hotkey">CTRL + F9</span>            
+            </button>
+            <button class="macro-button">
+              <span class="title">Macro 1</span>
+              <span class="hotkey">CTRL + F9</span>            
+            </button>
+            <button class="macro-button">
+              <span class="title">Macro 1</span>
+              <span class="hotkey">CTRL + F9</span>            
+            </button>
+            <button class="macro-button">
+              <span class="title">Macro 1</span>
+              <span class="hotkey">CTRL + F9</span>            
+            </button>
+          </div>  
+        </div>
+        <div class="macro-details">
+          <h2 style="text-align: center; padding: 5px 0px;">Details</h2>
+          <div class="macro-details-content">
+            <div class="macro-options-content">
+              <h3>Macro 1</h3>
+              <div class="macro-options-grid">
+                <div class="macro-options-item">
+                  <span class="option">Start Delay</span>
+                  <span class="value">1000ms</span>
+                </div>
+                <div class="macro-options-item">
+                  <span class="option">Loop Count</span>
+                  <span>500</span>
+                </div>
+                <div class="macro-options-item">
+                  <span class="option">Loop Delay</span>
+
+                  <span>500ms</span>
+                </div>
+                <div class="macro-options-item">
+                  <span class="option">Hotkey</span>
+
+                  <span>CTRL + F9</span>
+                </div>
+              </div>
+            </div>
+            <div class="macro-functionality-content">
+              <div class="function-item">
+                <h4 class="fas fa-computer-mouse"></h4>
+                <span>LMB Down</span>  
+              </div>
+              <div class="function-item">
+                <h5>50ms</h5>
+              </div>
+              <div class="function-item">
+                <h4 class="fas fa-computer-mouse"></h4>
+                <h5>LMB Up</h5>  
+              </div>
+              <div class="function-item">
+                <h5>50ms</h5>
+              </div>
+              <div class="function-item">
+                <h4 class="fas fa-keyboard"></h4>
+                <h5>S Down</h5>  
+              </div>
+              <div class="function-item">
+                <h5>1000ms</h5>
+              </div>
+              <div class="function-item">
+                <h4 class="fas fa-keyboard"></h4>
+                <h5>S Up</h5>  
+              </div>
+            </div>
+            <button style="padding: 10px 0px;">Edit</button>
+          </div>
+        </div>
+      </div>
+    </div>
   </body>
 </html>
