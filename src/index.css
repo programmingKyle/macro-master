@@ -188,7 +188,7 @@ select {
   display: grid;
   grid-gap: 5px;
   height: 100%;
-  grid-template-rows: 1fr;
+  grid-template-rows: auto 1fr;
   overflow: hidden;
 }
 
