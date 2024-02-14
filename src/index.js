@@ -66,6 +66,30 @@ app.on('activate', () => {
 
 // In this file you can include the rest of your app's specific main process
 // code. You can also put them in separate files and import them here.
+ipcMain.handle('database-handler', (req, data) => {
+  if (!data || !data.request) return;
+  switch (data.request) {
+    case 'Add':
+      const addSuccess = addToDatabase(data.title);
+      return addSuccess;
+  }
+});
+
+function addToDatabase(title){
+  const sql = 'INSERT INTO macros (title, startDelay, loopCount, loopDelay, hotKey, macro) VALUES (?, 0, 0, 0, ?, NULL)';
+
+  return new Promise((resolve, reject) => {
+    db.run(sql, [title, 'CTRL + F9'], (error) => {
+      if (error) {
+        console.error(error);
+        reject(false);
+      } else {
+        resolve(true);
+      }
+    })
+  });
+}
+
 ipcMain.handle('frame-handler', (req, data) => {
   if (!data || !data.request) return;
   switch(data.request){

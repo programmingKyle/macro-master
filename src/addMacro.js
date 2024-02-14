@@ -4,7 +4,7 @@ const addMacroContent_el = document.getElementById('addMacroContent');
 const addMacroCloseButton_el = document.getElementById('addMacroCloseButton');
 const mediaTypeHeader_el = document.getElementById('mediaTypeHeader');
 const macroTitleInput_el = document.getElementById('macroTitleInput');
-const addMediaButton_el = document.getElementById('addMediaButton');
+const addMacroButton_el = document.getElementById('addMacroButton');
 
 addMacroOverviewButton_el.addEventListener('click', () => {
     toggleAddMacroOverlay();
@@ -21,3 +21,12 @@ function toggleAddMacroOverlay(){
         addMacroOverlay_el.style.display = 'none';
     }
 }
+
+addMacroButton_el.addEventListener('click', async () => {
+    const success = await api.databaseHandler({request: 'Add', title: macroTitleInput_el.value});
+    if (success) {
+        toggleAddMacroOverlay();
+    } else {
+        console.error('Error adding macro');
+    }
+});
