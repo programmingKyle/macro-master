@@ -4,6 +4,21 @@ const path = require('path');
 let mainWindow;
 let isMaximized = false;
 
+const sqlite3 = require('sqlite3').verbose();
+const db = new sqlite3.Database('database.db');
+
+db.run(`
+  CREATE TABLE IF NOT EXISTS macros (
+    id INTEGER PRIMARY KEY,
+    title TEXT,
+    startDelay INT,
+    loopCount TEXT,
+    loopDelay TEXT,
+    hotKey TEXT,
+    macro TEXT
+  )
+`);
+
 // Handle creating/removing shortcuts on Windows when installing/uninstalling.
 if (require('electron-squirrel-startup')) {
   app.quit();

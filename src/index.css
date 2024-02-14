@@ -42,6 +42,10 @@ div {
   padding-left: 10px;
 }
 
+.macro-list-grid button:hover {
+  background-color: #252525
+}
+
 .macro-list-grid button .title {
   font-size: 18px;
 }
